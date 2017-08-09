@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<title>NanGua</title>
+		<link rel="icon" href="img/title.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="img/title.ico" type="image/x-icon">
+		<link rel="stylesheet" href="css/style01.css">
+	</head>
+
+	<body>
+
+		<header>
+			<div id="homeUser"></div>
+			<ul>
+				<li class="navtop">
+					<span></span>
+				</li>
+				<li class="navtop">
+					<span></span>
+				</li>
+				<li class="navtop">
+					<span></span>
+				</li>
+				<li class="navtop">
+					<span></span>
+				</li>
+			</ul>
+		</header>
+		<div id="pageContain">
+			<div class="page page1 current">
+				<div class="contain">
+					
+
+					<div class='box'>
+						  <div class='wave -one'></div>
+						  <div class='wave -two'></div>
+						  <div class='wave -three'></div>
+						  <div class='title'>
+								<div id="user">
+									<div id="user-line"></div>
+									<div id="user-img"></div>
+								</div>
+						  </div>
+						  <div class='wave -one card-bottom'></div>
+						  <div class='wave -two card-bottom'></div>
+						  <div class='wave -three card-bottom'></div>
+					</div>
+
+
+				</div>
+			</div>
+
+			<div class="page page2">
+				<div class="contain">
+					
+				</div>
+			</div>
+
+			<div class="page page3">
+				<div class="contain">
+					
+				</div>
+			</div>
+
+			<div class="page page4">
+				<div class="contain">
+					
+				</div>
+			</div>
+
+			<div class="page page5">
+				<div class="contain">
+					
+				</div>
+			</div>
+		</div>
+
+		<ul id="navBar">
+			<li class="nav-one">
+				<span></span>
+			</li>
+			<li class="nav-two">
+				<span></span>
+			</li>
+			<li class="nav-three">
+				<span></span>
+			</li>
+			<li class="nav-four">
+				<span></span>
+			</li>
+			<li class="nav-five">
+				<span></span>
+			</li>
+		</ul>
+
+		<script src="js/jquery-2.1.4.min.js"></script>
+		<script src="js/fg.js"></script>
+		<script>
+		var umbb
+		var runPage;
+		runPage = new FullPage({
+			id: 'pageContain',
+			slideTime: 800,
+			continuous : true,
+			effect: {
+				transform: {
+					translate: 'Y'
+				},
+				opacity: [0, 1]
+			},
+			mode: 'wheel, touch, nav:navBar',
+			easing: 'ease',
+			beforeChange : function(index, thisPage) {   
+				if(thisPage.className.indexOf("page1")!==-1){
+					$("header").addClass('up');
+				}
+    		},
+			callback: function(index, thisPage){
+				// console.log('滚动到了第' + (index + 1) + ' 屏');
+		
+				if(thisPage.className.indexOf("page1")!==-1){
+					$("header").removeClass('up');
+				}
+			}
+		});
+		$("#homeUser").bind("click",function(){
+			runPage.go(0);
+		})
+
+		</script>
+
+	</body>
+</html>
