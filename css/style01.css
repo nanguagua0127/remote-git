@@ -47,6 +47,17 @@ header>#homeUser:hover{
 }
 
 
+header>ul{
+  width: 35%;
+  height: 100%;
+}
+header>ul>li{
+  display: inline-block;
+  width: 25%;
+  height: 100%;
+}
+
+
 
 
 #pageContain{
