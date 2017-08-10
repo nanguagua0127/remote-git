@@ -14,9 +14,6 @@
 			<div id="homeUser"></div>
 			<ul>
 				<li class="navtop">
-					<span>One</span>
-				</li>
-				<li class="navtop">
 					<span>Two</span>
 				</li>
 				<li class="navtop">
@@ -24,6 +21,9 @@
 				</li>
 				<li class="navtop">
 					<span>Four</span>
+				</li>
+				<li class="navtop">
+					<span>Five</span>
 				</li>
 			</ul>
 		</header>
@@ -118,10 +118,22 @@
     		},
 			callback: function(index, thisPage){
 				// console.log('滚动到了第' + (index + 1) + ' 屏');
-		
+				// 
+				$(".navtop").removeClass('see');
 				if(thisPage.className.indexOf("page1")!==-1){
 					$("header").removeClass('up');
+				};
+				console.log(thisPage);
+				if(thisPage.className.indexOf("page2")!==-1){
+					$(".navtop:nth-child(1)").addClass('see');
+				}else if(thisPage.className.indexOf("page3")!==-1){
+					$(".navtop:nth-child(2)").addClass('see');
+				}else if(thisPage.className.indexOf("page4")!==-1){		
+					$(".navtop:nth-child(3)").addClass('see');
+				}else if(thisPage.className.indexOf("page5")!==-1){		
+					$(".navtop:nth-child(4)").addClass('see');
 				}
+
 			}
 		});
 		$("#homeUser").bind("click",function(){
