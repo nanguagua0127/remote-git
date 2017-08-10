@@ -139,6 +139,15 @@
 		$("#homeUser").bind("click",function(){
 			runPage.go(0);
 		})
+
+
+		$(".navtop").bind("click",function(){
+			let navtopindex = $(this).index();
+			runPage.go(navtopindex+1);
+		})
+
+
+
 		//git , l am here !
 		//
 		//modify again !!!

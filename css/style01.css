@@ -64,6 +64,10 @@ header>ul>li{
   text-align: center;
   line-height: 60px;
 }
+li.navtop:hover{
+  cursor: pointer;
+}
+
 header>ul>li.see{
   font-weight: bold;
   color:#ffeb3b;
